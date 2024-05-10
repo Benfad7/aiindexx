@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .dialog {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        .button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dialog">
+        <h2>Download Our App</h2>
+        <p>Click the button below to download our app:</p>
+        <a id="downloadButton" class="button" href="#">Download App</a>
+    </div>
+
+    <script>
+        function createAppDownloadLink(appName, androidPackageName, iOSAppId) {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            if (/android/i.test(userAgent)) {
+                return `https://play.google.com/store/apps/details?id=${androidPackageName}`;
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return `https://apps.apple.com/app/${appName}/id${iOSAppId}`;
+            } else {
+                return null;
+            }
+        }
+
+        document.getElementById("downloadButton").addEventListener("click", function(event) {
+            event.preventDefault();
+            var appName = "MyApp";
+            var androidPackageName = "com.example.myapp";
+            var iOSAppId = "123456789";
+            var downloadLink = createAppDownloadLink(appName, androidPackageName, iOSAppId);
+            if (downloadLink) {
+                window.location.href = downloadLink;
+            } else {
+                alert("Your device is not supported.");
+            }
+        });
+    </script>
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>
