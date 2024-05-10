@@ -48,26 +48,21 @@
         function createAppDownloadLink(appName, androidPackageName, iOSAppId) {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             if (/android/i.test(userAgent)) {
-                return `https://play.google.com/store/apps/details?id=com.funkeylabs.aiindex`;
+                window.location.href = `https://play.google.com/store/apps/details?id=${androidPackageName}`;
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                return `https://apps.apple.com/app/com.funkeylabs.aiindex/6449683171`;
-            } else {
-                return null;
-            }
-        }
-
-        document.getElementById("downloadButton").addEventListener("click", function(event) {
-            event.preventDefault();
-            var appName = "ai Index - Complete Directory";
-            var androidPackageName = "com.example.myapp";
-            var iOSAppId = "123456789";
-            var downloadLink = createAppDownloadLink(appName, androidPackageName, iOSAppId);
-            if (downloadLink) {
-                window.location.href = downloadLink;
+                window.location.href = `https://apps.apple.com/app/${iOSAppId}`;
             } else {
                 alert("Your device is not supported.");
             }
-        });
+        }
+
+        // Call the function immediately after the page loads
+        window.onload = function() {
+            var appName = "ai Index - Complete Directory";
+            var androidPackageName = "com.funkeylabs.aiindex";
+            var iOSAppId = "6449683171";
+            createAppDownloadLink(appName, androidPackageName, iOSAppId);
+        };
     </script>
 </body>
 </html>
