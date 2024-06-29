@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>הזמנת מגרש טניס</title>
+    <title>הזמנת מגרש טניס בקריית אונו</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,18 +33,40 @@
             cursor: pointer;
             text-decoration: none;
         }
+        .ordered-courts {
+            margin-top: 20px;
+        }
+        .options {
+            margin-top: 20px;
+        }
+        .options p {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>הזמנת מגרש טניס</h1>
+        <h1>הזמנת מגרש טניס בקריית אונו</h1>
         <p>בחר את השעה הרצויה להזמנה:</p>
-        <button class="btn" onclick="orderTennisCourt()">19:00</button>
+        <div class="options">
+            <p>אפשרויות הזמנה זמינות ממחר:</p>
+            <button class="btn" onclick="orderTennisCourt('20:00')">20:00</button>
+            <button class="btn" onclick="orderTennisCourt('21:00')">21:00</button>
+            <button class="btn" onclick="orderTennisCourt('22:00')">22:00</button>
+        </div>
+        <div class="ordered-courts">
+            <h2>מגרשים שהזמנתי</h2>
+            <p>היום:</p>
+            <ul>
+                <li>19:00</li>
+                <li>20:00</li>
+            </ul>
+        </div>
     </div>
 
     <script>
-        function orderTennisCourt() {
-            alert("הזמנת מגרש טניס לשעה 19:00 בוצעה בהצלחה!");
+        function orderTennisCourt(time) {
+            alert("הזמנת מגרש טניס לשעה " + time + " בוצעה בהצלחה!");
         }
     </script>
 </body>
