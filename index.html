@@ -1,74 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title><!DOCTYPE html>
-<html lang="en">
+<html lang="he">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download App</title>
+    <title>הזמנת מגרש טניס</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-        .dialog {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            direction: rtl;
+            text-align: right;
             padding: 20px;
-            text-align: center;
         }
-        .button {
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        h1 {
+            color: #333;
+        }
+        .btn {
             display: inline-block;
-            background-color: #007bff;
-            color: #fff;
             padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
             border-radius: 5px;
+            cursor: pointer;
             text-decoration: none;
-            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="dialog">
-        <h2>Download Our App</h2>
-        <p>Click the button below to download our app:</p>
-        <a id="downloadButton" class="button" href="#">Download App</a>
+    <div class="container">
+        <h1>הזמנת מגרש טניס</h1>
+        <p>בחר את השעה הרצויה להזמנה:</p>
+        <button class="btn" onclick="orderTennisCourt()">19:00</button>
     </div>
 
     <script>
-        function createAppDownloadLink(appName, androidPackageName, iOSAppId) {
-            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            if (/android/i.test(userAgent)) {
-                window.location.href = `https://play.google.com/store/apps/details?id=${androidPackageName}`;
-            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                window.location.href = `https://apps.apple.com/app/${iOSAppId}`;
-            } else {
-                alert("Your device is not supported.");
-            }
+        function orderTennisCourt() {
+            alert("הזמנת מגרש טניס לשעה 19:00 בוצעה בהצלחה!");
         }
-
-        // Call the function immediately after the page loads
-        window.onload = function() {
-            var appName = "ai Index - Complete Directory";
-            var androidPackageName = "com.funkeylabs.aiindex";
-            var iOSAppId = "6449683171";
-            createAppDownloadLink(appName, androidPackageName, iOSAppId);
-        };
     </script>
-</body>
-</html>
-</title>
-</head>
-<body>
-
 </body>
 </html>
